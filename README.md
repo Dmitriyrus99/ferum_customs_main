@@ -30,8 +30,8 @@ sudo systemctl start redis
 
 ```bash
 # загрузите репозиторий
-git clone https://github.com/Dmitriyrus99/ferumdub.git
-cd ferumdub
+git clone https://github.com/Dmitriyrus99/ferum_customs_main.git
+cd ferum_customs_main
 
 # установите системные пакеты (Ubuntu 22.04)
 sudo apt-get update && sudo apt-get install -y \
@@ -161,7 +161,7 @@ where systemd is not used. Detailed instructions are available in
 После настройки запустите `codex` в каталоге проекта. Подробности в [docs/CODEX_SETUP.md](docs/CODEX_SETUP.md).
 ## Поддержка
 
-Вопросы и предложения можно оставлять в [issue‑трекере](https://github.com/Dmitriyrus99/ferumdub/issues).
+Вопросы и предложения можно оставлять в [issue‑трекере](https://github.com/Dmitriyrus99/ferum_customs_main/issues).
 
 ---
 Дополнительные материалы доступны в [docs/OUTLINE.md](docs/OUTLINE.md).
