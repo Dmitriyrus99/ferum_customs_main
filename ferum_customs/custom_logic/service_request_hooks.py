@@ -82,6 +82,16 @@ def prevent_deletion_with_links(
         )
 
 
+def after_insert(doc: "ServiceRequest", method: str | None = None) -> None:
+    """Log creation of a Service Request."""
+    frappe.logger(__name__).info(f"Service Request '{doc.name}' created")
+
+
+def on_cancel(doc: "ServiceRequest", method: str | None = None) -> None:
+    """Log cancellation of a Service Request."""
+    frappe.logger(__name__).info(f"Service Request '{doc.name}' cancelled")
+
+
 # --------------------------------------------------------------------------- #
 #                           Whitelisted Methods                             #
 # --------------------------------------------------------------------------- #
