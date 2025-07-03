@@ -14,3 +14,4 @@ class TestTestBasic(FrappeTestCase):
 
     def test_basic(self, frappe_site):
         self.assertTrue(True)
+

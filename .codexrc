@@ -1,6 +1,7 @@
 [settings]
 branch_format = codex/{feature}
 diff_format = unified
+network = true
 
 [triggers]
 include_extensions = .py
