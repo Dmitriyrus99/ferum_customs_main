@@ -12,3 +12,16 @@ tasks:
     run: pytest -q
   - name: Lint and pre-commit
     run: pre-commit run --all-files
+image: universal
+
+setup:
+  run: |
+    bash ./scripts/setup.sh
+
+test:
+  - name: Python tests
+    run: pytest tests/
+
+lint:
+  - name: black
+    run: black . --check
