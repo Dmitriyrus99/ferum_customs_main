@@ -49,3 +49,4 @@ class TestServiceRequestHooks(FrappeTestCase):
         monkeypatch.setattr(frappe, "get_doc", raise_missing)
         result = service_request_hooks.get_engineers_for_object("OBJ")
         self.assertEqual(result, [])
+

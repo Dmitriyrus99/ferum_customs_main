@@ -129,3 +129,13 @@ def on_submit(doc: "ServiceReport", method: str | None = None) -> None:
                 "Произошла ошибка при обновлении связанной заявки. Обратитесь к администратору."
             )
         )
+
+
+def after_insert(doc: "ServiceReport", method: str | None = None) -> None:
+    """Log creation of a Service Report."""
+    frappe.logger(__name__).info(f"Service Report '{doc.name}' created")
+
+
+def on_cancel(doc: "ServiceReport", method: str | None = None) -> None:
+    """Log cancellation of a Service Report."""
+    frappe.logger(__name__).info(f"Service Report '{doc.name}' cancelled")

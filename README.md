@@ -33,6 +33,9 @@ sudo systemctl start redis
 git clone https://github.com/Dmitriyrus99/ferum_customs_main.git
 cd ferum_customs_main
 
+# скопируйте шаблон настроек окружения
+cp .env.example .env
+
 # установите системные пакеты (Ubuntu 22.04)
 sudo apt-get update && sudo apt-get install -y \
   git build-essential python3-dev libffi-dev libmysqlclient-dev \
@@ -105,7 +108,9 @@ ferum_customs/fixtures/ # демонстрационные данные
 | `start`   | Запуск сервера разработки (`bench start`)                 |
 | `update`  | Применение миграций, сборка бандлов и перезапуск Bench    |
 | `fixtures`| Экспорт текущих фикстур                                   |
-| `test`    | Запуск тестов для приложения `ferum_customs`              |
+| `test`    | Подготовка тестового сайта и запуск `pytest`               |
+| `lint`    | Проверка стиля кода через `pre-commit`                     |
+| `bench`   | Запуск `bench start`                                      |
 
 Для локальной отладки можно создать файл `ferum_customs/dev_hooks.py` и
 дополнить или переопределить стандартные хуки приложения. Этот файл игнорируется

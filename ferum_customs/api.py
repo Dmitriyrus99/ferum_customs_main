@@ -93,3 +93,39 @@ def create_invoice_from_report(service_report: str) -> str:
 
     invoice.insert(ignore_permissions=True)
     return invoice.name
+
+
+@whitelist()
+def get_request_status(docname: str) -> Optional[str]:
+    """Return status of the given Service Request."""
+    return frappe.db.get_value("Service Request", docname, "status")
+
+
+@whitelist()
+def get_report_status(docname: str) -> Optional[str]:
+    """Return status of the given Service Report."""
+    return frappe.db.get_value("Service Report", docname, "status")
+
+
+@whitelist()
+def generate_pdf(doctype: str, docname: str, print_format: str | None = None) -> bytes:
+    """Return PDF bytes for the specified document using a print format."""
+    return frappe.get_print(doctype, docname, print_format=print_format, as_pdf=True)
+
+
+@whitelist()
+def create_pdf_attachment(
+    doctype: str, docname: str, print_format: str | None = None
+) -> str:
+    """Generate PDF attachment from template and attach to the document."""
+    pdf = generate_pdf(doctype, docname, print_format)
+    file_doc = frappe.get_doc(
+        {
+            "doctype": "File",
+            "file_name": f"{doctype}-{docname}.pdf",
+            "content": pdf,
+            "attached_to_doctype": doctype,
+            "attached_to_name": docname,
+        }
+    ).insert(ignore_permissions=True)
+    return file_doc.file_url
