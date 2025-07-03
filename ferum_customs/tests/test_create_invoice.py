@@ -62,3 +62,4 @@ class TestCreateInvoice(FrappeTestCase):
         )
         with pytest.raises(Exception):
             api.create_invoice_from_report("SR-1")
+

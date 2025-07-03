@@ -44,3 +44,4 @@ class TestServiceReportHooks(FrappeTestCase):
         )
         with pytest.raises(Exception):
             service_report_hooks.validate(doc)
+

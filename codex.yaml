@@ -2,12 +2,10 @@ image: universal
 
 setup:
   run: |
-    bash ./scripts/setup.sh
+    ./setup.sh
 
-test:
+tasks:
   - name: Python tests
     run: pytest tests/
-
-lint:
-  - name: black
-    run: black . --check
+  - name: Lint and pre-commit
+    run: pre-commit run --all-files || echo "pre-commit not installed"

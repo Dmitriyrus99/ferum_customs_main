@@ -38,3 +38,4 @@ class TestStatusAPI(FrappeTestCase):
         monkeypatch.setattr(frappe.db, "get_value", raise_missing)
         with pytest.raises(frappe.DoesNotExistError):
             api.get_report_status("REP-missing")
+

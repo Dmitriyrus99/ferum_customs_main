@@ -34,3 +34,4 @@ class TestNewHooks(FrappeTestCase):
         doc = frappe._dict(name="REP-1")
         service_report_hooks.after_insert(doc)
         self.assertIn("REP-1", logger.messages[0])
+
