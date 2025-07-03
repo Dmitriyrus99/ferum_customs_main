@@ -19,6 +19,9 @@
 - `Invoice`
 - `Site`
 - `Maintenance Plan`
+  
+Полный перечень DocType и краткое описание доступен в файле
+[`docs/doctype_list.csv`](doctype_list.csv).
 
 ## Хуки (custom_hooks)
 
