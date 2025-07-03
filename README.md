@@ -49,7 +49,7 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ./dev_bootstrap.sh
 ```
 
-После запуска `dev_bootstrap.sh` каталог `frappe-bench` будет инициализирован,
+После запуска `dev_bootstrap.sh` каталог `ferum-bench` будет инициализирован,
 создан сайт `dev.localhost` и установлено приложение `ferum_customs`. Сервер
 Bench запустится автоматически и будет доступен по адресу
 `http://localhost:8000` (пользователь **Administrator**, пароль `admin`).
@@ -59,8 +59,8 @@ Bench запустится автоматически и будет доступ
 ```bash
 pip install frappe-bench
 export CI=true  # позволяет запускать bench под root
-sudo bench init frappe-bench --frappe-branch version-15
-cd frappe-bench
+sudo bench init ferum-bench --frappe-branch version-15
+cd ferum-bench
 sudo bench new-site test_site
 bench get-app erpnext --branch version-15
 bench --site test_site install-app erpnext
