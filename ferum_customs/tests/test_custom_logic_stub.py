@@ -192,3 +192,4 @@ def test_payroll_entry_before_save_default(frappe_stub):
     doc = DummyDoc(total_payable=None)
     hooks.before_save(doc)
     assert doc.total_payable == 0.0
+

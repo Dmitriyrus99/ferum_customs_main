@@ -4,7 +4,7 @@ set -e
 APP_NAME="ferum_customs"
 SITE_NAME="${SITE_NAME:-dev.localhost}"
 FRAPPE_BRANCH="${FRAPPE_BRANCH:-version-15}"
-BENCH_DIR="${BENCH_DIR:-frappe-bench}"
+BENCH_DIR="${BENCH_DIR:-ferum-bench}"
 APP_PATH="${APP_PATH:-$(pwd)/ferum_customs}"
 
 init_bench() {

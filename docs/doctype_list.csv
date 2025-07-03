@@ -1,0 +1,15 @@
+DocType,Description
+Service Request,Frappe document for service tickets
+Service Report,Report linked to a request
+Service Report Work Item,Child table for report items
+Service Report Document Item,Child table for document attachments
+Service Object,Track equipment or objects
+Service Project,Customer project container
+Assigned Engineer Item,Child table listing assigned engineers
+Payroll Entry Custom,Customized payroll entry
+Custom Attachment,Extended file record
+Audit Log,Change history log
+Service Contract,Customer contract with SLA
+Invoice,Sales Invoice link to service report
+Site,Customer location info
+Maintenance Plan,Site maintenance schedule

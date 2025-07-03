@@ -1,9 +1,7 @@
 # Сводка по текущей реализации
-
+Конфигурация DocType и их событий хранится в `docs/doctype_config.yaml`.
 ## Набор DocType
-
 На данный момент в приложении `ferum_customs` определены следующие DocType:
-
 - `Service Request`
 - `Service Report`
 - `Service Report Work Item`
@@ -17,22 +15,18 @@
 - `Service Contract`
 - `Invoice`
 - `Site`
-- `Maintenance Plan`
-
+- `Maintenance Plan` 
+Полный перечень DocType и краткое описание доступен в файле
+[`docs/doctype_list.csv`](doctype_list.csv).
 ## Хуки (custom_hooks)
-
 Файл `ferum_customs/custom_hooks.py` задаёт обработчики событий DocType:
-
 - **Service Request** – `validate`, `on_update_after_submit`, `on_trash`, `after_insert`, `on_cancel`
 - **Service Report** – `validate`, `on_submit`, `after_insert`, `on_cancel`
 - **Service Object** – `validate`
 - **Payroll Entry Custom** – `validate`, `before_save`
 - **Custom Attachment** – `on_trash`
-
 ## API
-
 В `ferum_customs/api.py` реализованы whitelisted‑методы:
-
 - `validate_service_request`
 - `on_submit_service_request`
 - `cancel_service_request`

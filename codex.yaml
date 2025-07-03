@@ -1,3 +1,17 @@
+
+image: universal
+network: true
+
+setup:
+  run: |
+    cp .env.example .env
+    bash setup.sh
+
+tasks:
+  - name: Python tests
+    run: pytest -q
+  - name: Lint and pre-commit
+    run: pre-commit run --all-files
 image: universal
 
 setup:
